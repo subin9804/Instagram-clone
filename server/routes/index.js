@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const userController = require('../controllers/userController')
 
 // INDEX 
 router.get('/', (req, res, next) => {
@@ -16,5 +17,10 @@ router.get('/', (req, res, next) => {
   4 DELETE - Delete data
 
 */
+
+/* USERS */
+router.post('/users', userController.register);
+router.get('/users', userController.users);
+router.post('/user/login', userController.login);
 
 module.exports = router;
