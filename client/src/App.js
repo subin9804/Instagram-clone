@@ -10,7 +10,7 @@ import Login from "./component/Login";
 import SignUp from "./component/SignUp";
 import Profile from "./component/Profile";
 import FollowerList from "./component/FollowerList";
-import followingList from "./component/FollowingList";
+import FollowingList from "./component/FollowingList";
 import Accounts from "./component/Accounts";
 import NotFound from "./component/NotFound";
 
@@ -33,7 +33,7 @@ function App() {
             <Route path="profiles/:username">
               <Route index element={<Profile/>} />
               <Route path="followers" element={<FollowerList />} />
-              <Route path="following" element={<followingList />} />
+              <Route path="following" element={<FollowingList />} />
             </Route>
 
             <Route path="accounts/edit" element={<Accounts />} />

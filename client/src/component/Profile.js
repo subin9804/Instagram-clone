@@ -42,17 +42,33 @@ export default function Profile() {
 
     // 로그아웃
     function handleSignOut() {
+        const confirmed = window.confirm('Are you sure to log out?');
 
+        if(confirmed) {
+            setUser(null);
+        }
     }
 
     // 팔로우
     async function handleFollow() {
+        try {
+            await follow(username);
 
+            setProfile({...profile, isFollowing: true});
+        } catch(error) {
+            alert(error)
+        }
     }
 
     // 언팔로우
     async function handleUnfollow() {
+        try {
+            await unfollow(username);
 
+            setProfile({...profile, isFollowing: false});
+        }catch(error) {
+            alert(error)
+        }
     }
 
     useEffect(() => {

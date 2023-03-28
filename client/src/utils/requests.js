@@ -79,8 +79,8 @@ export async function doesEmailExists(email) {
 
 /* ARTICLES */
 // 피드
-export async function getFeed() {
-    const res = await fetch(`${server}/feed`, {
+export async function getFeed(skip) {
+    const res = await fetch(`${server}/feed?skip=${skip}`, {
         headers: {'Authorization' : 'Bearer ' + JSON.parse(localStorage.getItem("user")).token}
     });
 
@@ -248,7 +248,7 @@ export async function getFollowers(username) {
 }
 
 // 팔로잉 목록 가져오기
-export async function getFollowing (username) {
+export async function getFollowings (username) {
     const res = await fetch(`${server}/users/?following=${username}`, {
         headers: {'Authorization' : 'Bearer ' + JSON.parse(localStorage.getItem("user")).token}
     })
