@@ -8,7 +8,7 @@ if (!userArgs[0].startsWith('mongodb')) {
   return;
 }
 
-async function seedDatabase() {
+async function seedDatabase() { 
   try {
     const MONGODB_URI = userArgs[0];
 
@@ -20,21 +20,21 @@ async function seedDatabase() {
         email: 'cat@example.com',
         fullName: 'Kitty',
         image: 'cat.jpeg',
-        bio: 'Meow',
+        bio: 'Meow'
       },
       {
         username: 'dog',
-        email: 'dot@example.com',
+        email: 'dog@example.com',
         fullName: 'Mr.Loyal',
         image: 'dog.jpeg',
-        bio: 'Bark',
+        bio: 'Bark'
       },
       {
         username: 'bird',
         email: 'bird@example.com',
         fullName: 'Blue and White',
         image: 'bird.jpeg',
-        bio: '',
+        bio:''
       }
     ]
 
@@ -53,9 +53,8 @@ async function seedDatabase() {
     }
 
     // 게시물 생성 쿼리
-
     for (let i = 1; i <= 4; i++) {
-      const user = await User.findOne({ username: 'cat' });
+      const user = await User.findOne({username: 'cat'});
 
       const article = new Article();
       article.images = [`${i}.jpeg`];
